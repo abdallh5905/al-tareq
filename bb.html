@@ -1,1 +1,662 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الطارق للعمرة والزيارة - حملات عمرة من الرياض</title>
+    <meta name="description" content="الطارق للعمرة والزيارة - رحلات عمرة منظمة من الرياض إلى مكة والمدينة، بباصات 2027 وفنادق راقية. باقات اقتصادية و VIP شاملة النقل والسكن.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A4A3A;
+            --primary-dark: #052E23;
+            --primary-light: #E8F2EF;
+            --gold: #C9A050;
+            --gold-dark: #A07D30;
+            --gold-light: #F9F3E2;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #adb5bd;
+            --gray-500: #6c757d;
+            --gray-600: #495057;
+            --gray-700: #343a40;
+            --gray-800: #1e1e1e;
+            --gray-900: #121212;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.03);
+            --shadow: 0 4px 12px rgba(0,0,0,0.06);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,0.12);
+            --radius-sm: 10px;
+            --radius: 14px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--white);
+            color: var(--gray-700);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--gray-900);
+        }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        @media (min-width: 1400px) { .container { max-width: 1280px; } }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            padding: 14px 32px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+            text-decoration: none; cursor: pointer; border: none; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            font-family: 'Cairo', sans-serif; white-space: nowrap; position: relative; overflow: hidden;
+        }
+        .btn::before {
+            content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+            border-radius: 50%; background: rgba(255,255,255,0.3); transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn:hover::before { width: 300px; height: 300px; }
+        .btn-primary { background: var(--gold); color: #fff; box-shadow: 0 8px 20px rgba(201, 160, 80, 0.3); }
+        .btn-primary:hover { background: var(--gold-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(201, 160, 80, 0.4); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: #fff; transform: translateY(-3px); }
+        .btn-call { background: var(--primary); color: #fff; box-shadow: 0 8px 20px rgba(10, 74, 58, 0.3); }
+        .btn-call:hover { background: var(--primary-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(10, 74, 58, 0.4); }
+        .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover { background: #1fb855; transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+        .btn-sm { padding: 10px 20px; font-size: 0.9rem; }
+        .btn-lg { padding: 16px 34px; font-size: 1.1rem; }
+
+        /* Navbar animation */
+        .navbar {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200); transition: all 0.4s ease;
+        }
+        .navbar.scrolled { box-shadow: var(--shadow-md); background: rgba(255,255,255,0.98); }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-icon { width: 44px; height: 44px; flex-shrink: 0; transition: transform 0.3s; }
+        .logo:hover .logo-icon { transform: rotate(-5deg) scale(1.05); }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .logo-text .company-name { font-family: 'Cairo', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--primary-dark); }
+        .logo-text .company-sub { font-size: 0.7rem; font-weight: 500; color: var(--gold-dark); letter-spacing: 0.5px; }
+        .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--gray-700); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--primary); transition: width 0.3s; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-cta { display: flex; align-items: center; gap: 12px; }
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; z-index: 1001; }
+        .hamburger span { display: block; width: 26px; height: 2.5px; background: var(--gray-800); border-radius: 2px; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+        @media (max-width: 1024px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #fff; flex-direction: column; padding: 100px 30px 30px; gap: 20px; box-shadow: var(--shadow-xl); transition: right 0.4s ease; z-index: 999; }
+            .nav-links.active { right: 0; }
+            .hamburger { display: flex; }
+            .nav-cta .btn { display: none; }
+        }
+
+        /* Hero with parallax effect */
+        .hero {
+            position: relative; padding: 80px 0 110px; overflow: hidden;
+            background: linear-gradient(135deg, rgba(10,74,58,0.85) 0%, rgba(5,46,35,0.9) 100%), url('img/Hb8WrimCzRlokvGGeYXX.webp') center/cover no-repeat;
+            background-blend-mode: overlay; color: #fff; background-attachment: fixed;
+        }
+        .hero .container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 2; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+        .hero-content h1 .gold-text { color: var(--gold); display: inline-block; position: relative; }
+        .hero-content h1 .gold-text::after { content: ''; position: absolute; bottom: 4px; left: 0; width: 100%; height: 8px; background: rgba(255,215,0,0.2); border-radius: 4px; z-index: -1; }
+        .hero-content p { font-size: 1.15rem; color: rgba(255,255,255,0.9); margin-bottom: 2rem; max-width: 480px; animation: fadeInUp 1s ease 0.2s both; }
+        .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeInUp 1s ease 0.4s both; }
+        .hero-visual { display: flex; justify-content: center; align-items: center; animation: fadeInRight 1s ease 0.3s both; }
+        .travel-card { background: #fff; border-radius: var(--radius-xl); padding: 30px; box-shadow: var(--shadow-xl); width: 100%; max-width: 380px; position: relative; border: 1px solid var(--gray-100); color: var(--gray-800); transition: transform 0.3s, box-shadow 0.3s; }
+        .travel-card:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
+        .travel-badge { position: absolute; top: -16px; left: 30px; background: var(--primary); color: #fff; padding: 6px 18px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; box-shadow: var(--shadow-md); }
+        .travel-route { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px; font-weight: 700; font-size: 1.2rem; }
+        .travel-route .city { font-family: 'Cairo', sans-serif; }
+        .travel-route .arrow { color: var(--gold); font-size: 1.4rem; animation: pulse 1.5s infinite; }
+        .features-list { list-style: none; }
+        .features-list li { display: flex; align-items: center; gap: 10px; padding: 8px 0; color: var(--gray-600); font-size: 0.9rem; }
+        .features-list li .check-icon { color: var(--primary); font-weight: 700; font-size: 1.1rem; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
+
+        @media (max-width: 900px) {
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-content h1 { font-size: 2.4rem; }
+            .hero-content p { max-width: 100%; margin: 0 auto 1.5rem; }
+            .hero-buttons { justify-content: center; }
+            .travel-card { max-width: 320px; margin: 0 auto; }
+        }
+
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title .subtitle { display: inline-block; color: var(--gold-dark); font-weight: 600; font-size: 0.95rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .section-title h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+        .section-title .line { width: 50px; height: 3px; background: var(--gold); margin: 0 auto; border-radius: 2px; transition: width 0.5s; }
+        .section-title:hover .line { width: 80px; }
+
+        /* Packages with reveal animation */
+        .packages { padding: 80px 0; background: #fff; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
+        .package-card {
+            background: #fff; border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+            overflow: hidden; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2); box-shadow: var(--shadow-sm);
+            display: flex; flex-direction: column; opacity: 0; transform: translateY(30px);
+        }
+        .package-card.visible { opacity: 1; transform: translateY(0); }
+        .package-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-8px) scale(1.02); border-color: var(--gold); }
+        .package-card.featured { border-color: var(--gold); }
+        .package-img { width: 100%; height: 200px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .package-card:hover .package-img { transform: scale(1.08); }
+        .package-body { padding: 28px 24px 24px; display: flex; flex-direction: column; flex-grow: 1; }
+        .badge { position: absolute; top: 16px; right: 16px; background: var(--gold); color: #fff; padding: 6px 18px; border-radius: 50px; font-weight: 700; font-size: 0.8rem; z-index: 2; animation: glow 2s infinite; }
+        .package-card h3 { font-size: 1.5rem; margin-bottom: 0.3rem; color: var(--gray-900); }
+        .card-desc { color: var(--gray-500); font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.5; }
+        .card-features { list-style: none; margin-bottom: 1.8rem; flex-grow: 1; }
+        .card-features li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; font-size: 0.95rem; color: var(--gray-700); border-bottom: 1px dashed var(--gray-100); transition: 0.3s; }
+        .card-features li:hover { color: var(--primary); padding-right: 5px; }
+        .card-features li:last-child { border-bottom: none; }
+        .card-features li .feature-icon { color: var(--primary); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+        .card-bottom { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+
+        @keyframes glow { 0%, 100% { box-shadow: 0 0 5px var(--gold); } 50% { box-shadow: 0 0 15px var(--gold); } }
+
+        /* Why Us with hover interactions */
+        .why-us { padding: 90px 0; background: linear-gradient(180deg, #fcfdfb 0%, #f7f9f7 100%); position: relative; }
+        .why-us::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary)); opacity: 0.6; }
+        .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .why-card {
+            background: #fff; border-radius: var(--radius); padding: 32px 24px; text-align: center;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2); border: 1px solid var(--gray-100);
+            box-shadow: var(--shadow-sm); position: relative; overflow: hidden; opacity: 0; transform: translateY(20px);
+        }
+        .why-card.visible { opacity: 1; transform: translateY(0); }
+        .why-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
+        .why-card:hover::after { transform: scaleX(1); }
+        .why-card:hover { box-shadow: var(--shadow-md); transform: translateY(-8px); border-color: var(--gold-light); }
+        .why-icon {
+            width: 64px; height: 64px; border-radius: 20px; background: var(--primary-light);
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem;
+            color: var(--primary); transition: 0.4s;
+        }
+        .why-card:hover .why-icon { background: var(--primary); color: #fff; transform: rotate(5deg) scale(1.1); }
+        .why-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--gray-900); }
+        .why-card p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.6; }
+
+        /* Fleet with scale effect */
+        .fleet { padding: 80px 0; background: #fff; }
+        .fleet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+        .fleet-item {
+            background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200);
+            transition: all 0.4s ease; box-shadow: var(--shadow-sm); opacity: 0; transform: scale(0.95);
+        }
+        .fleet-item.visible { opacity: 1; transform: scale(1); }
+        .fleet-item:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-5px) scale(1.03); }
+        .fleet-img { width: 100%; height: 130px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .fleet-item:hover .fleet-img { transform: scale(1.1); }
+        .fleet-body { padding: 16px; text-align: center; }
+        .fleet-body .bus-type { font-weight: 700; color: var(--gray-800); }
+        .fleet-body .bus-seats { font-size: 0.85rem; color: var(--gray-500); margin-top: 4px; }
+
+        /* Hotels with same animation */
+        .hotels { padding: 80px 0; background: var(--gray-50); }
+        .hotels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+        .hotel-item {
+            background: #fff; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--gray-200);
+            transition: all 0.4s ease; box-shadow: var(--shadow-sm); opacity: 0; transform: scale(0.95);
+        }
+        .hotel-item.visible { opacity: 1; transform: scale(1); }
+        .hotel-item:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-5px) scale(1.03); }
+        .hotel-img { width: 100%; height: 130px; object-fit: cover; display: block; transition: transform 0.5s; }
+        .hotel-item:hover .hotel-img { transform: scale(1.1); }
+        .hotel-body { padding: 16px; text-align: center; }
+        .stars { color: var(--gold); letter-spacing: 2px; }
+        .hotel-type { font-weight: 700; margin-top: 4px; }
+
+        /* Comparison table row hover */
+        .comparison { padding: 80px 0; background: #fff; }
+        .comparison-table { width: 100%; border-collapse: collapse; min-width: 600px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+        .comparison-table th { background: var(--primary); color: #fff; padding: 16px; font-weight: 700; }
+        .comparison-table td, .comparison-table th { padding: 14px 16px; text-align: center; border-bottom: 1px solid var(--gray-200); transition: background 0.3s; }
+        .comparison-table tbody tr:hover td { background: var(--gray-50); }
+        .comparison-table td { color: var(--gray-600); }
+        .highlight-col { background: #fffdf7; }
+
+        /* Booking form focus animations */
+        .booking { padding: 80px 0; background: var(--gray-50); }
+        .booking-card { background: #fff; border-radius: var(--radius-xl); padding: 40px 30px; box-shadow: var(--shadow-lg); max-width: 700px; margin: 0 auto; transition: 0.3s; }
+        .booking-card:hover { box-shadow: 0 25px 60px rgba(0,0,0,0.12); }
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--gray-700); }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: var(--radius-sm);
+            font-family: 'Tajawal', sans-serif; font-size: 0.95rem; transition: 0.3s;
+        }
+        .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(10,74,58,0.1); transform: translateY(-2px); }
+
+        /* FAQ accordion smooth */
+        .faq { padding: 80px 0; background: #fff; }
+        .faq-list { max-width: 750px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--gray-200); }
+        .faq-question { width: 100%; padding: 18px 0; background: none; border: none; text-align: right; font-weight: 600; font-size: 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Cairo', sans-serif; color: var(--gray-800); transition: color 0.3s; }
+        .faq-question:hover { color: var(--primary); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 200px; padding-bottom: 16px; }
+        .faq-arrow { transition: transform 0.3s; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+        .cta {
+            padding: 60px 0; background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #fff; text-align: center;
+        }
+        .cta h2 { color: #fff; margin-bottom: 1rem; }
+        .cta p { color: rgba(255,255,255,0.8); margin-bottom: 1.5rem; }
+
+        .footer { background: var(--gray-900); color: #aaa; padding: 50px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+        .footer h4 { color: #fff; margin-bottom: 12px; }
+        .footer a { color: #aaa; text-decoration: none; transition: color 0.3s; }
+        .footer a:hover { color: var(--gold); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; }
+
+        /* Floating icons with continuous animations */
+        .whatsapp-float {
+            position: fixed; bottom: 24px; left: 24px; width: 60px; height: 60px;
+            background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.4); z-index: 999; transition: 0.3s; text-decoration: none;
+            animation: float 3s ease-in-out infinite, pulse-green 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); animation: none; }
+
+        .call-float {
+            position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px;
+            background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(10,74,58,0.4); z-index: 999; transition: 0.3s; text-decoration: none;
+            animation: float 3s ease-in-out infinite reverse, pulse-call 2s infinite;
+        }
+        .call-float:hover { transform: scale(1.1); animation: none; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes pulse-green {
+            0%,100% { box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+            50% { box-shadow: 0 8px 30px rgba(37,211,102,0.7), 0 0 0 15px rgba(37,211,102,0.08); }
+        }
+        @keyframes pulse-call {
+            0%,100% { box-shadow: 0 8px 24px rgba(10,74,58,0.4); }
+            50% { box-shadow: 0 8px 30px rgba(10,74,58,0.7), 0 0 0 15px rgba(10,74,58,0.08); }
+        }
+
+        /* General animation classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="48" fill="#0A4A3A" stroke="#C9A050" stroke-width="4"/>
+                    <path d="M35 62 L50 22 L65 62" fill="none" stroke="#C9A050" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="50" cy="68" r="5" fill="#C9A050"/>
+                    <path d="M35 52 L65 52" stroke="#C9A050" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="company-name">الطارق</span>
+                    <span class="company-sub">للعمرة والزيارة</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#packages">الباقات</a></li>
+                <li><a href="#fleet">الباصات</a></li>
+                <li><a href="#hotels">الفنادق</a></li>
+                <li><a href="#comparison">المقارنة</a></li>
+                <li><a href="#booking">احجز الآن</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">واتساب</a>
+                <button class="hamburger" id="hamburger" aria-label="القائمة"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>حملات عمرة من <span class="gold-text">الرياض</span><br>براحة لم تعهدها من قبل</h1>
+                <p>رحلات منظمة إلى مكة والمدينة بباصات 2027 الحديثة، وفنادق مختارة بعناية. باقات شاملة للأفراد والعائلات بخيارات متعددة.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+                        احجز الآن واتساب
+                    </a>
+                    <a href="#packages" class="btn btn-outline btn-lg" style="border-color:#fff; color:#fff;">استعرض الباقات</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="travel-card">
+                    <span class="travel-badge">🌟 انطلاق شبه يومي</span>
+                    <div class="travel-route"><span class="city">الرياض</span><span class="arrow">→</span><span class="city">مكة</span></div>
+                    <ul class="features-list">
+                        <li><span class="check-icon">✓</span> باصات موديل 2027</li>
+                        <li><span class="check-icon">✓</span> فنادق 3 إلى 5 نجوم</li>
+                        <li><span class="check-icon">✓</span> غرف عائلية أو مشتركة</li>
+                        <li><span class="check-icon">✓</span> تأكيد فوري عبر واتساب</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">باقاتنا</span>
+                <h2>اختر الرحلة التي تناسبك</h2>
+                <div class="line"></div>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card reveal-left">
+                    <img src="https://placehold.co/600x400/e8f5ef/0A4A3A?text=Economy+Umrah" alt="الباقة الاقتصادية" class="package-img">
+                    <div class="package-body">
+                        <h3>الباقة الاقتصادية</h3>
+                        <p class="card-desc">راحة بسعر مناسب وجودة لا تُضاهى</p>
+                        <ul class="card-features">
+                            <li><span class="feature-icon">🚌</span> باص حديث 49 مقعداً موديل 2027</li>
+                            <li><span class="feature-icon">🏨</span> فندق 3 نجوم مريح</li>
+                            <li><span class="feature-icon">📍</span> مكة فقط، أو مكة والمدينة</li>
+                            <li><span class="feature-icon">📅</span> مدة مرنة: 3 أو 5 أيام</li>
+                            <li><span class="feature-icon">🛏</span> غرف عائلية خاصة أو مشتركة</li>
+                        </ul>
+                        <div class="card-bottom">
+                            <a href="tel:0535584705" class="btn btn-call btn-sm">📞 اتصل الآن</a>
+                            <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">استفسر واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card featured reveal" style="position: relative;">
+                    <span class="badge">الأكثر تميزاً</span>
+                    <img src="https://placehold.co/600x400/f9f3e2/C9A050?text=VIP+Umrah" alt="باقة VIP" class="package-img">
+                    <div class="package-body">
+                        <h3>باقة VIP الفاخرة</h3>
+                        <p class="card-desc">فخامة وخصوصية لا مثيل لها</p>
+                        <ul class="card-features">
+                            <li><span class="feature-icon">🚍</span> باص فاخر 30 مقعداً فقط</li>
+                            <li><span class="feature-icon">🏨</span> فندق 4 أو 5 نجوم</li>
+                            <li><span class="feature-icon">📅</span> كل اثنين وخميس أسبوعياً</li>
+                            <li><span class="feature-icon">📍</span> 3 أيام في مكة المكرمة</li>
+                            <li><span class="feature-icon">👥</span> للعزاب والعائلات</li>
+                        </ul>
+                        <div class="card-bottom">
+                            <a href="tel:0535584705" class="btn btn-call btn-sm">📞 اتصل الآن</a>
+                            <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">استفسر واتساب</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card reveal-right">
+                    <img src="https://placehold.co/600x400/e9ecef/495057?text=Bus+Only" alt="حجز الباص فقط" class="package-img">
+                    <div class="package-body">
+                        <h3>حجز الباص فقط</h3>
+                        <p class="card-desc">مرونة كاملة لمن يملك سكنه</p>
+                        <ul class="card-features">
+                            <li><span class="feature-icon">🔁</span> ذهاب وعودة أو اتجاه واحد</li>
+                            <li><span class="feature-icon">🛣</span> الرياض ⇄ مكة المكرمة</li>
+                            <li><span class="feature-icon">🚌</span> باصات حديثة موديل 2027</li>
+                            <li><span class="feature-icon">🕐</span> مواعيد منتظمة ومريحة</li>
+                            <li><span class="feature-icon">💼</span> مثالي لمن دبّر سكنه</li>
+                        </ul>
+                        <div class="card-bottom">
+                            <a href="tel:0535584705" class="btn btn-call btn-sm">📞 اتصل الآن</a>
+                            <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">استفسر واتساب</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="subtitle">لماذا الطارق؟</span>
+                <h2>رحلتك الإيمانية تستحق الأفضل</h2>
+                <div class="line"></div>
+                <p style="color:var(--gray-500); max-width:600px; margin:1rem auto 0;">نحرص على توفير تجربة روحانية متكاملة تجمع بين الراحة والأمان والجودة</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal"><div class="why-icon">🚌</div><h4>أسطول حديث</h4><p>باصات 2027 مريحة بمقاعد واسعة وتكييف ممتاز لتجربة سفر راقية.</p></div>
+                <div class="why-card reveal"><div class="why-icon">📅</div><h4>مواعيد مرنة</h4><p>رحلات شبه يومية للباقة الاقتصادية ومواعيد VIP أسبوعية تناسب جدولك.</p></div>
+                <div class="why-card reveal"><div class="why-icon">🏨</div><h4>إقامة مضمونة</h4><p>فنادق 3 إلى 5 نجوم محجوزة مسبقاً وقريبة من الحرم لراحة بالك.</p></div>
+                <div class="why-card reveal"><div class="why-icon">👨‍👩‍👧‍👦</div><h4>للعائلات والأفراد</h4><p>غرف عائلية خاصة وأخرى مشتركة للعزاب تناسب جميع الاحتياجات.</p></div>
+                <div class="why-card reveal"><div class="why-icon">💬</div><h4>تواصل فوري</h4><p>فريق دعم متاح على واتساب على مدار الساعة للرد على استفساراتك.</p></div>
+                <div class="why-card reveal"><div class="why-icon">💎</div><h4>أسعار شفافة</h4><p>لا رسوم مخفية، جميع التكاليف موضحة بالكامل قبل تأكيد الحجز.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <div class="section-title reveal"><span class="subtitle">أسطولنا</span><h2>باصات حديثة موديل 2027</h2><div class="line"></div></div>
+            <div class="fleet-grid">
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/e8f5ef/0A4A3A?text=Bus+Economy" alt="باص اقتصادي" class="fleet-img"><div class="fleet-body"><div class="bus-type">اقتصادي 49 مقعد</div><div class="bus-seats">4 صفوف · مريح</div></div></div>
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/e8f5ef/0A4A3A?text=Bus+Economy+2" alt="باص اقتصادي" class="fleet-img"><div class="fleet-body"><div class="bus-type">اقتصادي مريح</div><div class="bus-seats">49 مقعداً · مكيف</div></div></div>
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Bus+VIP" alt="باص VIP" class="fleet-img"><div class="fleet-body"><div class="bus-type">VIP 30 مقعد</div><div class="bus-seats">3 صفوف فاخرة</div></div></div>
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Bus+VIP+2" alt="باص VIP فاخر" class="fleet-img"><div class="fleet-body"><div class="bus-type">VIP فاخر</div><div class="bus-seats">مساحة أرجل أوسع</div></div></div>
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/e8f5ef/0A4A3A?text=Bus+2027" alt="باص 2027" class="fleet-img"><div class="fleet-body"><div class="bus-type">اقتصادي 2027</div><div class="bus-seats">موديل حديث</div></div></div>
+                <div class="fleet-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Bus+Luxury" alt="باص درجة أولى" class="fleet-img"><div class="fleet-body"><div class="bus-type">VIP درجة أولى</div><div class="bus-seats">خدمة مميزة</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hotels" id="hotels">
+        <div class="container">
+            <div class="section-title reveal"><span class="subtitle">إقامتك</span><h2>فنادق مختارة بعناية</h2><div class="line"></div></div>
+            <div class="hotels-grid">
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/e8f5ef/0A4A3A?text=Hotel+3+Stars" alt="فندق 3 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★</div><div class="hotel-type">3 نجوم - اقتصادي</div></div></div>
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/e8f5ef/0A4A3A?text=Hotel+3+Stars" alt="فندق 3 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★</div><div class="hotel-type">3 نجوم - مريح</div></div></div>
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Hotel+4+Stars" alt="فندق 4 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★★</div><div class="hotel-type">4 نجوم - VIP</div></div></div>
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Hotel+5+Stars" alt="فندق 5 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★★★</div><div class="hotel-type">5 نجوم - فاخر</div></div></div>
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Hotel+4+Stars" alt="فندق 4 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★★</div><div class="hotel-type">4 نجوم - مميز</div></div></div>
+                <div class="hotel-item scale-in"><img src="https://placehold.co/400x300/f9f3e2/C9A050?text=Hotel+5+Stars" alt="فندق 5 نجوم" class="hotel-img"><div class="hotel-body"><div class="stars">★★★★★</div><div class="hotel-type">5 نجوم - راقٍ</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <div class="section-title reveal"><span class="subtitle">مقارنة سريعة</span><h2>الاقتصادية أم VIP؟</h2><div class="line"></div></div>
+            <div style="overflow-x:auto;" class="reveal">
+                <table class="comparison-table">
+                    <tr><th>الوجه</th><th>اقتصادية</th><th class="highlight-col">VIP</th></tr>
+                    <tr><td>الانطلاق</td><td>يومياً تقريباً</td><td class="highlight-col">الاثنين والخميس</td></tr>
+                    <tr><td>الباص</td><td>4 صفوف - 49 مقعد</td><td class="highlight-col">3 صفوف - 30 مقعد</td></tr>
+                    <tr><td>الفندق</td><td>3 نجوم</td><td class="highlight-col">4 أو 5 نجوم</td></tr>
+                    <tr><td>الوجهة</td><td>مكة أو مكة والمدينة</td><td class="highlight-col">مكة المكرمة</td></tr>
+                    <tr><td>المدة</td><td>3-5 أيام</td><td class="highlight-col">3 أيام</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title reveal"><span class="subtitle">احجز الآن</span><h2>ثلاث خطوات تفصلك عن الحرم</h2><div class="line"></div></div>
+            <div class="booking-card reveal">
+                <form id="bookingForm" onsubmit="handleBooking(event)">
+                    <div class="form-group"><label>نوع الباقة</label><select id="packageType" required><option value="">-- اختر --</option><option value="اقتصادية">اقتصادية</option><option value="VIP">VIP</option><option value="باص فقط">باص فقط</option></select></div>
+                    <div class="form-group"><label>تاريخ السفر</label><input type="date" id="travelDate" required></div>
+                    <div class="form-group"><label>عدد المسافرين</label><select id="travelers" required><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+                    <div class="form-group"><label>الاسم</label><input type="text" id="name" placeholder="الاسم الكامل" required></div>
+                    <button type="submit" class="btn btn-whatsapp btn-lg" style="width:100%;">أرسل الطلب عبر واتساب</button>
+                </form>
+                <p style="text-align:center;margin-top:1rem;color:var(--gray-500);">⚡ رد فوري – بدون دفع مسبق</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title reveal"><span class="subtitle">أسئلة شائعة</span><h2>كل ما تحتاج معرفته</h2><div class="line"></div></div>
+            <div class="faq-list reveal">
+                <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">هل الرحلات يومية؟ <span class="faq-arrow">▼</span></button><div class="faq-answer"><p>الاقتصادية شبه يومية، VIP كل اثنين وخميس.</p></div></div>
+                <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">ماذا تشمل الباقات؟ <span class="faq-arrow">▼</span></button><div class="faq-answer"><p>النقل ذهاباً وعودة والسكن الفندقي.</p></div></div>
+                <div class="faq-item"><button class="faq-question" onclick="toggleFaq(this)">كيف أحجز؟ <span class="faq-arrow">▼</span></button><div class="faq-answer"><p>املأ النموذج أو راسلنا واتساب على 0535584705.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>جاهز لرحلتك إلى بيت الله؟</h2>
+            <p>تواصل معنا الآن وسنرتب كل شيء.</p>
+            <a href="https://wa.me/966535584705" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">احجز عبر واتساب</a>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h4>الطارق للعمرة والزيارة</h4><p>حملات عمرة من الرياض إلى مكة والمدينة.</p></div>
+                <div><h4>روابط</h4><ul style="list-style:none;"><li><a href="#packages">الباقات</a></li><li><a href="#fleet">الباصات</a></li><li><a href="#faq">الأسئلة</a></li></ul></div>
+                <div><h4>تواصل</h4><p>📞 <a href="tel:0535584705">0535584705</a></p><p>الرياض، المملكة العربية السعودية</p></div>
+            </div>
+            <div class="footer-bottom">© 2026 الطارق للعمرة والزيارة</div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/966535584705" class="whatsapp-float" target="_blank" rel="noopener" aria-label="واتساب">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2.05 22l5.36-1.41a9.89 9.89 0 0 0 4.63 1.18h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.96 14.21c-.25 1.25-1.38 2.28-2.63 2.53-.69.14-1.59.25-4.61-.97-3.87-1.56-6.34-5.39-6.53-5.64-.19-.25-1.56-2.08-1.56-3.97s.99-2.81 1.34-3.19c.35-.38.76-.48 1.02-.48h.73c.23 0 .48.02.69.53.24.59.82 2.01.89 2.16.07.15.11.32.02.51-.09.19-.14.31-.27.48-.13.17-.28.38-.4.51-.12.13-.25.28-.11.55.14.27.63 1.04 1.35 1.68.93.83 1.71 1.08 1.95 1.2.24.12.38.1.52-.06.14-.16.6-.7.76-.94.16-.24.31-.2.53-.12.22.08 1.39.66 1.63.78.24.12.39.18.44.28.06.09.06.54-.18 1.07z"/></svg>
+    </a>
+
+    <a href="tel:0535584705" class="call-float" aria-label="اتصال هاتفي">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.57 1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 10);
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            if (!wasOpen) item.classList.add('open');
+        }
+
+        function handleBooking(e) {
+            e.preventDefault();
+            const pkg = document.getElementById('packageType').value;
+            const date = document.getElementById('travelDate').value;
+            const travelers = document.getElementById('travelers').value;
+            const name = document.getElementById('name').value;
+            const msg = `السلام عليكم، أرغب في حجز:\nالباقة: ${pkg}\nالتاريخ: ${date}\nالمسافرين: ${travelers}\nالاسم: ${name}`;
+            window.open(`https://wa.me/966535584705?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // Intersection Observer for animations
+        const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .scale-in, .why-card, .package-card, .fleet-item, .hotel-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(el => observer.observe(el));
+
+        // Parallax for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = -(scrolled * 0.4) + 'px';
+            }
+        });
+
+        const dateInput = document.getElementById('travelDate');
+        if (dateInput) {
+            const t = new Date();
+            dateInput.min = t.toISOString().split('T')[0];
+        }
+    </script>
+</body>
+</html>
